@@ -1,4 +1,5 @@
 ## A photo sharing site that put China and America side by side.
+**demo site:** coming soon.
 
 ### Why this site?
 Country stereotype is everywhere thanks to the media. But maybe there is more in common between us and people in other countries whose life we know little about and whose values we sweepingly disagree with. By putting similarly themed images of China and America side by side, it allows you to see what is really so different about us and what is really the same.  
