@@ -1,0 +1,11 @@
+#gallery.ad-gallery
+  .ad-image-wrapper
+  .ad-controls
+  .ad-nav
+    .ad-thumbs
+      %ul.ad-thumb-list
+        -if !photos.blank?
+          -photos.each do |p|
+            %li=link_to image_tag(p.attachment.url(:small),:alt=>p.description,:title=>p.name,:longdesc=>photo_path(p)),p.attachment.url
+        -else
+          %li=link_to image_tag("50x50.gif",:alt=>"your image will help bridge the gap of awareness for your community",:title=>"Upload the first image for this pair!"),"/assets/350x350.gif"

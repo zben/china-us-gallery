@@ -1,0 +1,13 @@
+%div.topbar
+    .topbar-inner
+        .container
+            =link_to 'China-US-Show',root_path,:class=>"brand"
+            %ul.nav
+                %li=link_to 'Home',current_user || root_path
+                %li=link_to 'Tags',job_posts_path if user_signed_in? 
+                %li=link_to "Favorites",new_user_registration_path if !user_signed_in?
+                %li=link_to "Setting",new_user_session_path if !user_signed_in?
+                %li=link_to "Sign up",new_user_registration_path if !user_signed_in?
+                %li=link_to "Sign in",new_user_session_path if !user_signed_in?
+                %li=link_to "Sign out",destroy_user_session_path,:method => :delete if user_signed_in?
+                

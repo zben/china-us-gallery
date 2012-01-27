@@ -1,0 +1,31 @@
+-unique_id=photo.id.to_s
+%div{:id=>"modal_#{unique_id}", :class=>"upload modal hide fade"}
+  .modal-header
+    =link_to "&times;".html_safe,'#',:class=>'close'
+    %h3=message
+  .modal-body
+    =semantic_form_for photo do |f|
+      .row
+        =f.input :id, :as=>:hidden,:label=>false
+        .span5=f.input :attachment,:label=>false
+        .span0=f.input :group_id, :as=>:hidden, :label=>false
+        .span1=submit_tag 'Upload', :class=>"btn"       
+        -if !photo.country_id.nil?
+          .span0=f.input :country_id, :as=>:hidden, :label=>false
+      -if photo.country_id.nil?
+        .row
+          .span2=f.input :country_id, :as=>:select, :collection=>Country.all, :prompt=>"Pick source",:label=>false
+           
+      .row
+        .span7=f.input :name,:label=>false,:placeholder=>"Title of the photo"
+      .row  
+        .span7=f.input :description, :as=>:text, :label=>false, 
+        :input_html => { :class => 'autogrow', :rows => 5, :cols => 10,:placeholder=>"What is the story with this photo?"}
+        
+      .row
+        %div{:class=>"span7 tags"}=text_field_tag :tags
+
+  .modal-footer
+    =submit_tag 'Upload', :class=>"btn primary"
+
+=button_tag message, :class=>"btn", :"data-controls-modal"=>"modal_#{unique_id}", :"data-backdrop"=>"true"

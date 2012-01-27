@@ -1,0 +1,56 @@
+.row
+  .span14
+
+    .row
+      .span7
+        %h2 
+          China
+          .china_tag_suggest=render 'photos/upload',:photo=>@new_china_related,:message=>"upload a related photo about China"
+        =render 'photos/slideshow',:photos=>@china_photos
+
+      .span7
+        %h2
+          US
+          .us_tag_suggest=render 'photos/upload',:photo=>@new_us_related,:message=>"upload a related photo about the US"
+        =render 'photos/slideshow',:photos=>@us_photos
+
+  .span2
+    .group_tag_suggest=render 'photos/upload',:photo=>@new_photo,:message=>"Add A Set"
+    %h4 Photo Sets
+    =render @groups
+
+
+:javascript
+
+
+  $(".group_tag_suggest .tags input").autoSuggest("http://localhost:3000/tags/list", {asHtmlID: "#{@new_photo.id}" , selectedValuesProp: "_id", selectedItemProp: "name", searchObjProps: "name", startText: "Enter tags here",matchCase: false});
+  $(".china_tag_suggest .tags input").autoSuggest("http://localhost:3000/tags/list", {asHtmlID: "#{@new_china_related.id}" , selectedValuesProp: "_id", selectedItemProp: "name", searchObjProps: "name", startText: "Enter tags here",matchCase: false});
+  $(".us_tag_suggest .tags input").autoSuggest("http://localhost:3000/tags/list", {asHtmlID: "#{@new_us_related.id}" , selectedValuesProp: "_id", selectedItemProp: "name", searchObjProps: "name", startText: "Enter tags here",matchCase: false});
+  
+  $(function() {
+    var galleries = $('.ad-gallery').adGallery();
+    $('#switch-effect').change(
+      function() {
+        galleries[0].settings.effect = $(this).val();
+        return false;
+      }
+    );
+    $('#toggle-slideshow').click(
+      function() {
+        galleries[0].slideshow.toggle();
+        return false;
+      }
+    );
+    $('#toggle-description').click(
+      function() {
+        if(!galleries[0].settings.description_wrapper) {
+          galleries[0].settings.description_wrapper = $('#descriptions');
+        } else {
+          galleries[0].settings.description_wrapper = false;
+        }
+        return false;
+      }
+    );
+  });
+
+

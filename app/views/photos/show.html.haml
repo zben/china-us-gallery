@@ -1,0 +1,11 @@
+.row
+  .span10
+    %h4=@photo.name
+    %h5=@photo.description
+    =image_tag @photo.attachment.url(:large)
+    %h5 tags:
+    -@photo.tags.each do |tag|
+      .tag=link_to tag.name,tag
+  .span6
+    -@similar_photos.each do |p|
+      =link_to image_tag(p.attachment.url(:medium)),p

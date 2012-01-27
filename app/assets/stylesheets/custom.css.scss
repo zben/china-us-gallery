@@ -1,0 +1,122 @@
+form .input {
+    margin-left: 0px;
+}
+
+ * {
+    font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Verdana, Arial, sans-serif;
+    color: #333;
+    line-height: 140%;
+  }
+  select, input, textarea {
+    font-size: 1em;
+  }
+ 
+  h2 {
+    margin-bottom: 0;
+    padding: 0;
+    border-bottom: 1px dotted #dedede;
+  }
+  h3 {
+
+    margin-bottom: 0;
+    padding: 0;
+  }
+  .example {
+    border: 1px solid #CCC;
+    background: #f2f2f2;
+
+    padding: 10px;
+  }
+  ul {
+    list-style-image:url(list-style.gif);
+  }
+  pre {
+    font-family: "Lucida Console", "Courier New", Verdana;
+    border: 1px solid #CCC;
+    background: #f2f2f2;
+    padding: 10px;
+  }
+  code {
+    font-family: "Lucida Console", "Courier New", Verdana;
+    margin: 0;
+    padding: 0;
+  }
+
+  #gallery {
+    padding: 0 30px ;
+    margin-bottom:10px;
+    background: #e1eef5;
+  }
+  #descriptions {
+    position: relative;
+    height: 50px;
+    background: #EEE;
+    margin-top: 10px;
+    width: 640px;
+    padding: 10px;
+    overflow: hidden;
+  }
+    #descriptions .ad-image-description {
+      position: absolute;
+    }
+      #descriptions .ad-image-description .ad-description-title {
+        display: block;
+      }
+
+.topbar{
+  position:static;
+  
+}
+input, textarea, select, .uneditable-input {
+    width: 100%;
+}
+
+.my-modal{
+  display:block;
+}
+
+.tag a{
+ display:inline_block;
+ padding:5px;
+ border-radius:5px;
+ background-color:#999;
+ color:white;
+ font-weight:bold;
+}
+
+.photo.span4{
+height:190px;
+line-height:190px;
+text-align:center;
+}
+.photo img{
+margin:0 auto; 
+vertical-align:middle;
+}
+
+footer{
+    text-align:center;
+    margin-top:0;
+}
+
+.photo img{
+padding:3px;
+border:1px solid #999;
+border-radius:5px;
+}
+
+.modal-body{
+  min-height:350px;
+}
+.main{
+  padding: 10px 0;
+  
+}
+
+.china_tag_suggest, .us_tag_suggest{
+  display:inline-block;
+  float:right;
+  button{
+    font-size:10px;
+  }
+}
