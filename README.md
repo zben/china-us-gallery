@@ -15,7 +15,7 @@ Country stereotype is everywhere thanks to the media. But maybe there is more in
 
 
 ### Keywords
-jquery.ad-gallery, Rails 3.1, Twitter Bootstrap, Mongo, Paperclip
+jquery.ad-gallery, Rails 3.1, Twitter Bootstrap, Mongo, Paperclip, S3 hosting
 
 ### Implementation Notes
 Implementation is fairly straight forward. Photo belongs to a set(also called group), Photo has and belongs to many tags. Photos has many ratings. Photo belongs_to country
